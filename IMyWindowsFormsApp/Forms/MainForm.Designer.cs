@@ -217,7 +217,7 @@
             // 
             this.richTextBoxTeacher.Location = new System.Drawing.Point(12, 400);
             this.richTextBoxTeacher.Name = "richTextBoxTeacher";
-            this.richTextBoxTeacher.Size = new System.Drawing.Size(127, 174);
+            this.richTextBoxTeacher.Size = new System.Drawing.Size(724, 218);
             this.richTextBoxTeacher.TabIndex = 24;
             this.richTextBoxTeacher.Text = "";
             // 
@@ -225,7 +225,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 586);
+            this.ClientSize = new System.Drawing.Size(771, 660);
             this.Controls.Add(this.richTextBoxTeacher);
             this.Controls.Add(this.lblGuid);
             this.Controls.Add(this.grdTeachers);

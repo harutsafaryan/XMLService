@@ -6,6 +6,7 @@ using IMyWindowsFormsApp.ViewModels;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -49,15 +50,34 @@ namespace IMyWindowsFormsApp
             };
             _teacherService.Add(teacher);
             RefreshTeachers();
+
+            richTextBoxTeacher.Text = File.ReadAllText("C:\\University\\teacher.xml");
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
+            if (grdTeachers.SelectedRows.Count == 0)
+                return;
+            else
+            {
+                _studentService.Remove((Guid)grdTeachers.SelectedRows[0].Cells[0].Value);
+                RefreshTeachers();
+            }
+            richTextBoxTeacher.Text = File.ReadAllText("C:\\University\\teacher.xml");
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            Teacher teacher = new Teacher()
+            {
+                Id = (Guid)grdTeachers.SelectedRows[0].Cells["Id"].Value,
+                LastName = txtLastName.Text,
+                FirstName = txtFirstName.Text,
+                Age = Convert.ToInt32(txtAge.Text)
+            };
+            _teacherService.Update(teacher);
+            RefreshTeachers();
+            richTextBoxTeacher.Text = File.ReadAllText("C:\\University\\teacher.xml");
         }
 
         private void grdTeachers_CellClick(object sender, DataGridViewCellEventArgs e)

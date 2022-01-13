@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace IMyWindowsApp.Data.Models
 {
-    [Serializable, XmlRoot(Namespace = "www.contoso.com", ElementName = "Teacher", IsNullable = true)]
+    [Serializable, XmlRoot("Teacher")]
     public class Teacher
     {
         public Teacher()
