@@ -27,7 +27,7 @@ namespace XmlManager
         public void Write(List<T> model, string path)
         {
             XmlSerializer formatter = new XmlSerializer(typeof(List<T>));
-            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(path, FileMode.Truncate))
             {
                 formatter.Serialize(fs, model);
             };

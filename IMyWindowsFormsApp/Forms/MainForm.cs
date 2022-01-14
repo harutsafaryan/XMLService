@@ -50,8 +50,6 @@ namespace IMyWindowsFormsApp
             };
             _teacherService.Add(teacher);
             RefreshTeachers();
-
-            richTextBoxTeacher.Text = File.ReadAllText("C:\\University\\teacher.xml");
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -60,10 +58,9 @@ namespace IMyWindowsFormsApp
                 return;
             else
             {
-                _studentService.Remove((Guid)grdTeachers.SelectedRows[0].Cells[0].Value);
+                _teacherService.Remove((Guid)grdTeachers.SelectedRows[0].Cells[0].Value);
                 RefreshTeachers();
             }
-            richTextBoxTeacher.Text = File.ReadAllText("C:\\University\\teacher.xml");
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -77,7 +74,6 @@ namespace IMyWindowsFormsApp
             };
             _teacherService.Update(teacher);
             RefreshTeachers();
-            richTextBoxTeacher.Text = File.ReadAllText("C:\\University\\teacher.xml");
         }
 
         private void grdTeachers_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -92,6 +88,7 @@ namespace IMyWindowsFormsApp
             {
                 grdTeachers.Rows[0].Selected = true;
             }
+            richTextBoxTeacher.Text = File.ReadAllText("C:\\University\\teacher.xml");
         }
 
         private void ShowRow()

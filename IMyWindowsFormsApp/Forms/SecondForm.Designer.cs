@@ -41,6 +41,7 @@ namespace IMyWindowsFormsApp.Forms
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.grdStudents = new System.Windows.Forms.DataGridView();
+            this.richTextBoxStudent = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,16 +147,25 @@ namespace IMyWindowsFormsApp.Forms
             this.grdStudents.Location = new System.Drawing.Point(12, 160);
             this.grdStudents.Name = "grdStudents";
             this.grdStudents.ReadOnly = true;
-            this.grdStudents.Size = new System.Drawing.Size(776, 278);
+            this.grdStudents.Size = new System.Drawing.Size(627, 160);
             this.grdStudents.TabIndex = 11;
             this.grdStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStudents_CellClick);
             this.grdStudents.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStudents_CellDoubleClick);
+            // 
+            // richTextBoxStudent
+            // 
+            this.richTextBoxStudent.Location = new System.Drawing.Point(13, 327);
+            this.richTextBoxStudent.Name = "richTextBoxStudent";
+            this.richTextBoxStudent.Size = new System.Drawing.Size(626, 270);
+            this.richTextBoxStudent.TabIndex = 12;
+            this.richTextBoxStudent.Text = "";
             // 
             // SecondForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(655, 609);
+            this.Controls.Add(this.richTextBoxStudent);
             this.Controls.Add(this.grdStudents);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnRemove);
@@ -191,5 +201,6 @@ namespace IMyWindowsFormsApp.Forms
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridView grdStudents;
+        private System.Windows.Forms.RichTextBox richTextBoxStudent;
     }
 }
